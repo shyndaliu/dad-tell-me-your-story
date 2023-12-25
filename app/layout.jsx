@@ -2,15 +2,15 @@ import "./globals.css";
 import Script from 'next/script';
 import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
-import { sfPro, inter } from "./fonts";
-import Nav from "@/components/layout/nav";
-import { Suspense } from "react";
+import { montserrat, prata } from "./fonts";
+import Header from "@/components/layout/header";
+import Menu from "@/components/layout/menu";
 
 export const metadata = {
-  title: "My First Project",
+  title: "Dad, tell me your story",
   description:
-    "Meet your AI Jeopardy expert.",
-  themeColor: "#FFF",
+    "For my family",
+  themeColor: "#000",
 };
 
 // iOS Safari viewport unit correction
@@ -38,16 +38,16 @@ export default async function RootLayout({
   children,
 }) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <Script id="safari-viewport-fix">{IOS_SAFARI_VIEWPORT_UNIT_CORRECTION}</Script>
-      <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
-        <Suspense fallback="...">
-          <Nav />
-        </Suspense>
-        <main className="flex min-h-screen w-full flex-col items-center justify-center pt-16 relative">
+      <body className={cx(montserrat.variable, prata.variable) + " text-white font-default"}>
+        <div className="fixed h-screen w-full bg-bgblack" />
+
+        <Header />
+        <main className="flex min-h-screen  w-full flex-col items-center justify-center pt-16 relative">
           {children}
         </main>
+        <Menu />
         <Analytics />
       </body>
     </html>

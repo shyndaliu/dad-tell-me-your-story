@@ -8,9 +8,14 @@ module.exports = {
   },
   theme: {
     extend: {
+      colors: {
+        'bgblack': '#101010',
+        'mainyellow': '#FFCB14',
+      },
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
-        default: ["var(--font-inter)", "system-ui", "sans-serif"],
+        default: ["var(--font-montserrat)", "system-ui", "sans-serif"],
+        title: ["var(--font-prata)", "system-ui", "sans-serif"],
       },
       animation: {
         // Fade up and down
